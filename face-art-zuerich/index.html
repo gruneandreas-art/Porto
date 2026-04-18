@@ -26,6 +26,7 @@
         <a href="kinderschminken.html" class="nav__link">Kinderschminken</a>
         <a href="hochzeiten.html" class="nav__link">Hochzeiten</a>
         <a href="unternehmen.html" class="nav__link">Für Unternehmen</a>
+        <a href="events.html" class="nav__link">Events</a>
         <a href="about.html" class="nav__link">Über uns</a>
         <a href="kontakt.html" class="nav__link nav__link--cta">Kontakt</a>
       </nav>
@@ -37,27 +38,65 @@
 
   <main>
 
-    <!-- ========== HERO ========== -->
-    <section class="hero">
+    <!-- ========== ACCORDION HERO ========== -->
+    <section class="acc-hero" id="accHero">
       <div class="hero__bg"></div>
-      <div class="hero__overlay"></div>
-      <div class="hero__content">
-        <p class="hero__eyebrow">Zürich &amp; Umgebung</p>
-        <h1 class="hero__title">Face Art<br><em>Zürich</em></h1>
-        <p class="hero__subtitle">Kinderschminken &amp; Face Art —<br>direkt zu eurem Event</p>
-        <div class="hero__cta">
-          <a href="https://wa.me/41764394928?text=Hallo%20Isa%2C%20ich%20m%C3%B6chte%20eine%20Anfrage%20stellen."
-             class="btn btn--whatsapp" target="_blank" rel="noopener noreferrer">
-            <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            WhatsApp
-          </a>
-          <a href="kontakt.html" class="btn btn--outline-white">Anfrage stellen</a>
+      <div class="acc-hero__inner">
+
+        <!-- Text block -->
+        <div class="acc-hero__text">
+          <p class="section__label">Zürich &amp; Umgebung</p>
+          <h1 class="acc-hero__title">
+            Face Art Zürich<br><em>Magische Momente für Gross &amp; Klein</em>
+          </h1>
+          <p class="acc-hero__subtitle">Kinderschminken &amp; Face Art — direkt zu eurem Event</p>
+          <div class="acc-hero__cta">
+            <a href="https://wa.me/41764394928?text=Hallo%20Isa%2C%20ich%20m%C3%B6chte%20eine%20Anfrage%20stellen."
+               class="btn btn--whatsapp" target="_blank" rel="noopener noreferrer">
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              WhatsApp
+            </a>
+            <a href="kontakt.html" class="btn btn--outline-white">Anfrage stellen</a>
+          </div>
         </div>
-      </div>
-      <div class="hero__scroll" aria-hidden="true">
-        <div class="hero__scroll-line"></div>
+
+        <!-- Image Accordion -->
+        <div class="acc-hero__accordion" id="accHeroAccordion" aria-label="Galerie — Face Art Motive">
+
+          <div class="acc-panel acc-panel--active" data-index="0">
+            <img src="src/images/gallery/8-krone.png" alt="Krone Face Art" draggable="false">
+            <div class="acc-panel__overlay"></div>
+            <span class="acc-panel__label">Krone</span>
+          </div>
+
+          <div class="acc-panel" data-index="1">
+            <img src="src/images/gallery/1-blumen.png" alt="Blumen Face Art" draggable="false">
+            <div class="acc-panel__overlay"></div>
+            <span class="acc-panel__label">Blumen</span>
+          </div>
+
+          <div class="acc-panel" data-index="2">
+            <img src="src/images/gallery/7-einhorn.png" alt="Einhorn Face Art" draggable="false">
+            <div class="acc-panel__overlay"></div>
+            <span class="acc-panel__label">Einhorn</span>
+          </div>
+
+          <div class="acc-panel" data-index="3">
+            <img src="src/images/gallery/6-adult-magnolie.jpg" alt="Magnolie Face Art" draggable="false">
+            <div class="acc-panel__overlay"></div>
+            <span class="acc-panel__label">Magnolie</span>
+          </div>
+
+          <div class="acc-panel" data-index="4">
+            <img src="src/images/gallery/9-butterfly2.png" alt="Schmetterling Face Art" draggable="false">
+            <div class="acc-panel__overlay"></div>
+            <span class="acc-panel__label">Schmetterling</span>
+          </div>
+
+        </div>
+
       </div>
     </section>
 
@@ -72,7 +111,7 @@
         <div class="services__grid">
           <a href="kinderschminken.html" class="service-card">
             <div class="service-card__img service-card__img--kinder">
-              <span class="service-card__img-label">Foto folgt</span>
+              <img src="src/images/gallery/8-krone.png" alt="Kinderschminken — Krone Motiv">
             </div>
             <div class="service-card__body">
               <h3 class="service-card__title">Kinderschminken</h3>
@@ -80,9 +119,19 @@
               <span class="service-card__link">Mehr erfahren →</span>
             </div>
           </a>
+          <a href="hochzeiten.html" class="service-card">
+            <div class="service-card__img service-card__img--hochzeit">
+              <img src="src/images/gallery/6-adult-magnolie.jpg" alt="Hochzeiten — Magnolie Motiv">
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Hochzeiten</h3>
+              <p class="service-card__text">Elegante Motive für Brautpaar und Gäste — ein romantisches Highlight, über das alle noch lange sprechen.</p>
+              <span class="service-card__link">Mehr erfahren →</span>
+            </div>
+          </a>
           <a href="unternehmen.html" class="service-card">
             <div class="service-card__img service-card__img--corporate">
-              <span class="service-card__img-label">Foto folgt</span>
+              <img src="src/images/gallery/10-adult-blue.jpg" alt="Unternehmen — Blue Art Motiv">
             </div>
             <div class="service-card__body">
               <h3 class="service-card__title">Für Unternehmen</h3>
@@ -90,20 +139,63 @@
               <span class="service-card__link">Mehr erfahren →</span>
             </div>
           </a>
+          <a href="about.html" class="service-card">
+            <div class="service-card__img service-card__img--about">
+              <img src="src/images/isa.png" alt="Isa — Face Art Zürich" class="service-card__isa">
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Über uns</h3>
+              <p class="service-card__text">Hinter Face Art Zürich steckt Isa — Künstlerin, Schmink-Enthusiastin und der Mensch, der euer Event unvergesslich macht.</p>
+              <span class="service-card__link">Mehr erfahren →</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ========== TESTIMONIAL ========== -->
-    <section class="section section--mint testimonial">
-      <div class="container container--narrow">
-        <svg class="testimonial__quote" viewBox="0 0 40 30" fill="currentColor" aria-hidden="true">
-          <path d="M0 30V18.75C0 10 5.5 3.875 16.5 0l2 3.25C13 5.25 10.25 8.375 9.5 13H18V30H0zm22 0V18.75C22 10 27.5 3.875 38.5 0l2 3.25C35 5.25 32.25 8.375 31.5 13H40V30H22z"/>
-        </svg>
-        <blockquote class="testimonial__text">
-          Die gesamte Organisation war super unkompliziert, professionell und freundlich. Es hat den Geburtstag wirklich zu etwas Besonderem gemacht – ein rundum gelungener Tag! Ich kann Face Art Zürich absolut weiterempfehlen und werde sie definitiv wieder buchen.
-        </blockquote>
-        <cite class="testimonial__author">— Niko Wigele</cite>
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="section testimonials-section">
+      <div class="container">
+        <header class="section__header section__header--center testimonials-section__header">
+          <span class="section__label">Was Kunden sagen</span>
+          <h2 class="section__title">Stimmen aus der Community</h2>
+          <p class="section__subtitle">Echte Erfahrungen von Eltern, Brautpaaren und Eventorganisatoren.</p>
+        </header>
+
+        <div class="testimonials-columns" aria-label="Kundenstimmen">
+
+          <!-- Column 1 -->
+          <div class="testimonials-col testimonials-col--1">
+            <div class="testimonials-col__track" style="animation-duration: 32s;">
+              <div class="t-card"><p class="t-card__text">„Wir sind mehr als begeistert! Isa ist eine super herzliche Person und unsere Kleine war mega happy mit dem tollen Einhorn, was sie gezaubert hat. Sie hatte immer ein Lächeln auf dem Gesicht und geht wunderbar auf die Wünsche der Kleinen ein. Immer wieder gerne!"</p><div class="t-card__author"><span class="t-card__avatar" style="--avatar-c:#68A9A0">LH</span><div><strong class="t-card__name">Lisa H.</strong><span class="t-card__role">Google Local Guide · Kindergeburtstag</span></div></div></div>
+              <div class="t-card"><p class="t-card__text">„Isa hat für uns an Ostern geschminkt und die Kinder waren hin und weg! Das Regenbogeneinhorn war wunderschön, für den Kleinen gab es einen Drachen, den er stolz herumzeigte. Wir werden sie für das nächste Fest auf jeden Fall wieder buchen!"</p><div class="t-card__author"><span class="t-card__avatar" style="--avatar-c:#9B7AC7">LH</span><div><strong class="t-card__name">Laura Hufnagel</strong><span class="t-card__role">Mama · Oster-Event</span></div></div></div>
+              <!-- duplicate for seamless loop -->
+              <div class="t-card" aria-hidden="true"><p class="t-card__text">„Wir sind mehr als begeistert! Isa ist eine super herzliche Person und unsere Kleine war mega happy mit dem tollen Einhorn, was sie gezaubert hat. Sie hatte immer ein Lächeln auf dem Gesicht und geht wunderbar auf die Wünsche der Kleinen ein. Immer wieder gerne!"</p><div class="t-card__author"><span class="t-card__avatar" style="--avatar-c:#68A9A0">LH</span><div><strong class="t-card__name">Lisa H.</strong><span class="t-card__role">Google Local Guide · Kindergeburtstag</span></div></div></div>
+              <div class="t-card" aria-hidden="true"><p class="t-card__text">„Isa hat für uns an Ostern geschminkt und die Kinder waren hin und weg! Das Regenbogeneinhorn war wunderschön, für den Kleinen gab es einen Drachen, den er stolz herumzeigte. Wir werden sie für das nächste Fest auf jeden Fall wieder buchen!"</p><div class="t-card__author"><span class="t-card__avatar" style="--avatar-c:#9B7AC7">LH</span><div><strong class="t-card__name">Laura Hufnagel</strong><span class="t-card__role">Mama · Oster-Event</span></div></div></div>
+            </div>
+          </div>
+
+          <!-- Column 2 (hidden on mobile) -->
+          <div class="testimonials-col testimonials-col--2">
+            <div class="testimonials-col__track" style="animation-duration: 40s;">
+              <div class="t-card"><p class="t-card__text">„Isa hat für uns am 3. Geburtstag meiner Tochter geschminkt. Sie zaubert mit ihren tollen Motiven jedem Kind ein Lachen ins Gesicht. Noch dazu ist sie sehr liebevoll mit den Kindern, super sympathisch und stets mit grosser Hingabe und bester Laune dabei. Ich kann sie wärmstens empfehlen."</p><div class="t-card__author"><span class="t-card__avatar" style="--avatar-c:#B87A8A">LF</span><div><strong class="t-card__name">Lisa Fuchs</strong><span class="t-card__role">Mama · 3. Kindergeburtstag</span></div></div></div>
+              <div class="t-card"><p class="t-card__text">„Ich war von Isas Arbeit auf meinem Junggesellinnenabschied sehr angetan. Ihr wunderschönes Make-up machte die Feier zu etwas ganz Besonderem. Die Kommunikation mit ihr war so gut, dass ich ihr spontan zusätzliche Verantwortung für die Gestaltung überliess. Absolut empfehlenswert!"</p><div class="t-card__author"><span class="t-card__avatar" style="--avatar-c:#7C6CAA">SN</span><div><strong class="t-card__name">Sabrina Nv</strong><span class="t-card__role">Braut · Junggesellinnenabschied</span></div></div></div>
+              <div class="t-card" aria-hidden="true"><p class="t-card__text">„Isa hat für uns am 3. Geburtstag meiner Tochter geschminkt. Sie zaubert mit ihren tollen Motiven jedem Kind ein Lachen ins Gesicht. Noch dazu ist sie sehr liebevoll mit den Kindern, super sympathisch und stets mit grosser Hingabe und bester Laune dabei. Ich kann sie wärmstens empfehlen."</p><div class="t-card__author"><span class="t-card__avatar" style="--avatar-c:#B87A8A">LF</span><div><strong class="t-card__name">Lisa Fuchs</strong><span class="t-card__role">Mama · 3. Kindergeburtstag</span></div></div></div>
+              <div class="t-card" aria-hidden="true"><p class="t-card__text">„Ich war von Isas Arbeit auf meinem Junggesellinnenabschied sehr angetan. Ihr wunderschönes Make-up machte die Feier zu etwas ganz Besonderem. Die Kommunikation mit ihr war so gut, dass ich ihr spontan zusätzliche Verantwortung für die Gestaltung überliess. Absolut empfehlenswert!"</p><div class="t-card__author"><span class="t-card__avatar" style="--avatar-c:#7C6CAA">SN</span><div><strong class="t-card__name">Sabrina Nv</strong><span class="t-card__role">Braut · Junggesellinnenabschied</span></div></div></div>
+            </div>
+          </div>
+
+          <!-- Column 3 (hidden on mobile + tablet) -->
+          <div class="testimonials-col testimonials-col--3">
+            <div class="testimonials-col__track" style="animation-duration: 36s; animation-direction: reverse;">
+              <div class="t-card"><p class="t-card__text">„Isa war super herzlich und hat die Kinder total begeistert. Die Schminke sah richtig schön aus und hat auch gut gehalten. Alles lief unkompliziert und entspannt ab. Wir würden sie jederzeit wieder buchen!"</p><div class="t-card__author"><span class="t-card__avatar" style="--avatar-c:#4A8C84">AM</span><div><strong class="t-card__name">Alex Miller</strong><span class="t-card__role">Familienfest</span></div></div></div>
+              <div class="t-card"><p class="t-card__text">„Isa hat bei uns an einem Kinderfest ganz viele Kinder glücklich gemacht! Trotz des grossen Andrangs blieb sie ruhig und gelassen. Sie hat einen super Draht zu Kindern und kann individuell auf sie eingehen. Trotzdem arbeitet sie sehr zügig — alle wurden bedient."</p><div class="t-card__author"><span class="t-card__avatar" style="--avatar-c:#9A7080">CV</span><div><strong class="t-card__name">Claudia Vetsch</strong><span class="t-card__role">Organisatorin · Kinderfest</span></div></div></div>
+              <div class="t-card" aria-hidden="true"><p class="t-card__text">„Isa war super herzlich und hat die Kinder total begeistert. Die Schminke sah richtig schön aus und hat auch gut gehalten. Alles lief unkompliziert und entspannt ab. Wir würden sie jederzeit wieder buchen!"</p><div class="t-card__author"><span class="t-card__avatar" style="--avatar-c:#4A8C84">AM</span><div><strong class="t-card__name">Alex Miller</strong><span class="t-card__role">Familienfest</span></div></div></div>
+              <div class="t-card" aria-hidden="true"><p class="t-card__text">„Isa hat bei uns an einem Kinderfest ganz viele Kinder glücklich gemacht! Trotz des grossen Andrangs blieb sie ruhig und gelassen. Sie hat einen super Draht zu Kindern und kann individuell auf sie eingehen. Trotzdem arbeitet sie sehr zügig — alle wurden bedient."</p><div class="t-card__author"><span class="t-card__avatar" style="--avatar-c:#9A7080">CV</span><div><strong class="t-card__name">Claudia Vetsch</strong><span class="t-card__role">Organisatorin · Kinderfest</span></div></div></div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
