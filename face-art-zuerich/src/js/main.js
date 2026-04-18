@@ -176,4 +176,82 @@
     });
   }
 
+  /* ===== Accordion Hero ===== */
+  var accAccordion = document.getElementById('accHeroAccordion');
+  if (accAccordion) {
+    var accPanels = accAccordion.querySelectorAll('.acc-panel');
+
+    function setAccActive(index) {
+      accPanels.forEach(function (panel, i) {
+        panel.classList.toggle('acc-panel--active', i === index);
+      });
+    }
+
+    accPanels.forEach(function (panel, i) {
+      panel.addEventListener('mouseenter', function () { setAccActive(i); });
+      panel.addEventListener('click',      function () { setAccActive(i); });
+    });
+  }
+
+  /* ===== Gallery Accordions (feature sections) ===== */
+  document.querySelectorAll('.gallery-acc').forEach(function (acc) {
+    var panels = acc.querySelectorAll('.gallery-acc__panel');
+    panels.forEach(function (panel, i) {
+      panel.addEventListener('mouseenter', function () {
+        panels.forEach(function (p, j) {
+          p.classList.toggle('gallery-acc__panel--active', j === i);
+        });
+      });
+      panel.addEventListener('click', function () {
+        panels.forEach(function (p, j) {
+          p.classList.toggle('gallery-acc__panel--active', j === i);
+        });
+      });
+    });
+  });
+
+  /* ===== Photo Fan — drag interaction ===== */
+  const photoCards = document.querySelectorAll('.photo-card');
+
+  photoCards.forEach(function (card) {
+    var startX, startY, origLeft, origTop, isDragging = false;
+    var baseX = parseInt(getComputedStyle(card).getPropertyValue('--tx')) || 0;
+    var baseY = parseInt(getComputedStyle(card).getPropertyValue('--ty')) || 0;
+
+    function onPointerDown(e) {
+      isDragging = true;
+      card.classList.add('photo-card--dragging');
+      startX = e.clientX;
+      startY = e.clientY;
+      // Read current rendered translate from inline style if snapped back
+      origLeft = baseX;
+      origTop  = baseY;
+      document.addEventListener('pointermove', onPointerMove);
+      document.addEventListener('pointerup',   onPointerUp);
+      e.preventDefault();
+    }
+
+    function onPointerMove(e) {
+      if (!isDragging) return;
+      var dx = e.clientX - startX;
+      var dy = e.clientY - startY;
+      var newX = origLeft + dx;
+      var newY = origTop  + dy;
+      card.style.transform = 'translate(' + newX + 'px, ' + newY + 'px) rotate(var(--rot)) scale(1.06)';
+    }
+
+    function onPointerUp() {
+      isDragging = false;
+      card.classList.remove('photo-card--dragging');
+      // Spring back
+      card.style.transition = 'transform 0.55s cubic-bezier(0.34,1.4,0.64,1), box-shadow 0.25s ease';
+      card.style.transform   = 'translate(var(--tx), var(--ty)) rotate(var(--rot)) scale(1)';
+      setTimeout(function () { card.style.transition = ''; }, 600);
+      document.removeEventListener('pointermove', onPointerMove);
+      document.removeEventListener('pointerup',   onPointerUp);
+    }
+
+    card.addEventListener('pointerdown', onPointerDown);
+  });
+
 })();
