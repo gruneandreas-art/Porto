@@ -302,4 +302,101 @@
     });
   }
 
+
+
+  /* ===== Gallery Lightbox ===== */
+  (function() {
+    var items = document.querySelectorAll('[data-gallery-item]');
+    var images = [];
+    items.forEach(function(el) {
+      var img = el.querySelector('img');
+      if (img) images.push(img.src);
+    });
+
+    if (!images.length) return;
+
+    // Create lightbox element
+    var lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.id = 'lightbox';
+    lb.innerHTML = '<button class="lightbox__close" aria-label="Schliessen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>' +
+      '<button class="lightbox__nav lightbox__prev" aria-label="Vorheriges"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>' +
+      '<button class="lightbox__nav lightbox__next" aria-label="Nächstes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>' +
+      '<img class="lightbox__img" src="" alt="Galerie Bild">';
+    document.body.appendChild(lb);
+
+    var lbImg = lb.querySelector('.lightbox__img');
+    var currentIdx = 0;
+
+    function openLightbox(idx) {
+      currentIdx = idx;
+      lbImg.src = images[idx];
+      lb.classList.add('lightbox--open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lb.classList.remove('lightbox--open');
+      document.body.style.overflow = '';
+    }
+
+    function showPrev() {
+      currentIdx = (currentIdx - 1 + images.length) % images.length;
+      lbImg.src = images[currentIdx];
+    }
+
+    function showNext() {
+      currentIdx = (currentIdx + 1) % images.length;
+      lbImg.src = images[currentIdx];
+    }
+
+    items.forEach(function(el, i) {
+      el.addEventListener('click', function() { openLightbox(i); });
+    });
+
+    lb.querySelector('.lightbox__close').addEventListener('click', closeLightbox);
+    lb.querySelector('.lightbox__prev').addEventListener('click', showPrev);
+    lb.querySelector('.lightbox__next').addEventListener('click', showNext);
+
+    lb.addEventListener('click', function(e) {
+      if (e.target === lb) closeLightbox();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (!lb.classList.contains('lightbox--open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    });
+  })();
+
+  /* ===== Mobile: show WhatsApp in nav menu ===== */
+  (function() {
+    var mq = window.matchMedia('(max-width: 980px)');
+    var waDesktop = document.querySelector('.nav__whatsapp');
+    var navMenu = document.getElementById('navMenu');
+    if (!waDesktop || !navMenu) return;
+
+    function update() {
+      if (mq.matches) {
+        // Add mobile WA link if not exists
+        if (!navMenu.querySelector('.nav__link--wa-mobile')) {
+          var a = document.createElement('a');
+          a.href = 'https://wa.me/41764394928?text=Hallo%20Isa%2C%20ich%20m%C3%B6chte%20eine%20Anfrage%20stellen.';
+          a.className = 'nav__link nav__link--wa-mobile';
+          a.style.cssText = 'background:#25D366;color:#fff;text-align:center;margin-top:.75rem;border-radius:8px;padding:.75rem;font-weight:600;';
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          a.textContent = '📱 Jetzt buchen via WhatsApp';
+          navMenu.appendChild(a);
+        }
+      } else {
+        var m = navMenu.querySelector('.nav__link--wa-mobile');
+        if (m) m.remove();
+      }
+    }
+    update();
+    mq.addEventListener('change', update);
+  })();
+
 })();
