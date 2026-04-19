@@ -254,4 +254,35 @@
     card.addEventListener('pointerdown', onPointerDown);
   });
 
+
+
+  /* ===== Expandable Gallery Cards ===== */
+  const expandCards = document.querySelectorAll('.expand-card');
+  if (expandCards.length) {
+    // Set first card active
+    expandCards[0].classList.add('active');
+    
+    expandCards.forEach((card, i) => {
+      // Staggered entrance animation
+      card.style.opacity = '0';
+      card.style.transform = 'translateX(-60px)';
+      setTimeout(() => {
+        card.style.transition = 'flex-grow 0.7s cubic-bezier(0.25,0.1,0.25,1), box-shadow 0.7s ease, background-size 0.7s ease, border-color 0.3s ease, opacity 0.5s ease, transform 0.5s ease';
+        card.style.opacity = '1';
+        card.style.transform = 'translateX(0)';
+      }, 180 * i);
+
+      card.addEventListener('click', () => {
+        const idx = parseInt(card.dataset.index);
+        expandCards.forEach(c => {
+          if (c === card) {
+            c.classList.add('active');
+          } else {
+            c.classList.remove('active');
+          }
+        });
+      });
+    });
+  }
+
 })();
