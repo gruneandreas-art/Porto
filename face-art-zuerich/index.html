@@ -101,54 +101,39 @@
     </section>
 
 
-            <!-- ========== LANDING ACCORDION ========== -->
-    <section class="section section--landing-accordion" id="galerie">
-      <div class="landing-accordion">
-        <!-- Left Side: Text + CTA -->
-        <div class="landing-accordion__left">
-          <span class="section__label">Galerie</span>
-          <h2 class="landing-accordion__title">Meine Face Art Motive</h2>
-          <p class="landing-accordion__desc">Professionelles Kinderschminken & Face Art — von zarten Blumen über mutige Flugzeuge bis zur Eiskönigin. Jedes Motiv ein kleines Kunstwerk.</p>
-          <a href="kontakt.html" class="landing-accordion__cta">
+                <!-- ========== IMAGE ACCORDION ========== -->
+    <section class="section section--img-accordion">
+      <div class="img-accordion-wrap">
+        <!-- Left: Text -->
+        <div class="img-accordion__text">
+          <h2 class="img-accordion__title">Meine Face Art Motive</h2>
+          <p class="img-accordion__desc">Professionelles Kinderschminken & Face Art — von zarten Blumen über mutige Flugzeuge bis zur Eiskönigin. Jedes Motiv ein kleines Kunstwerk auf der Haut.</p>
+          <a href="kontakt.html" class="img-accordion__cta">
             <span>Contact Us</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
-        <!-- Right Side: Image Accordion -->
-        <div class="landing-accordion__right">
-          <div class="landing-accordion__panels" id="accordionPanels">
-            <div class="accordion-panel active" data-index="0" style="background-image:url('src/images/gallery/1-blumen.jpg')">
-              <div class="accordion-panel__overlay"></div>
-              <div class="accordion-panel__content">
-                <span class="accordion-panel__tag">🌸</span>
-                <h3>Blumen</h3>
-                <p>Zarte Blumenmotive</p>
-              </div>
-            </div>
-            <div class="accordion-panel" data-index="1" style="background-image:url('src/images/gallery/4-flugi.jpg')">
-              <div class="accordion-panel__overlay"></div>
-              <div class="accordion-panel__content">
-                <span class="accordion-panel__tag">✈️</span>
-                <h3>Flugzeug</h3>
-                <p>Abenteuer für kleine Piloten</p>
-              </div>
-            </div>
-            <div class="accordion-panel" data-index="2" style="background-image:url('src/images/gallery/2-eiskoenigin.jpg')">
-              <div class="accordion-panel__overlay"></div>
-              <div class="accordion-panel__content">
-                <span class="accordion-panel__tag">❄️</span>
-                <h3>Eiskönigin</h3>
-                <p>Magische Winterwelten</p>
-              </div>
-            </div>
-            <div class="accordion-panel" data-index="3" style="background-image:url('src/images/gallery/5-pikachu.jpg')">
-              <div class="accordion-panel__overlay"></div>
-              <div class="accordion-panel__content">
-                <span class="accordion-panel__tag">⚡</span>
-                <h3>Pikachu</h3>
-                <p>Lieblings-Helden zum Anziehen</p>
-              </div>
-            </div>
+        <!-- Right: Accordion Panels -->
+        <div class="img-accordion__panels" id="imgAccordionPanels">
+          <div class="img-acc-panel active" data-index="0">
+            <img src="src/images/gallery/1-blumen.jpg" alt="Blumen Face Art" loading="lazy">
+            <div class="img-acc-panel__overlay"></div>
+            <span class="img-acc-panel__label">Blumen</span>
+          </div>
+          <div class="img-acc-panel" data-index="1">
+            <img src="src/images/gallery/4-flugi.jpg" alt="Flugzeug Face Art" loading="lazy">
+            <div class="img-acc-panel__overlay"></div>
+            <span class="img-acc-panel__label">Flugzeug</span>
+          </div>
+          <div class="img-acc-panel" data-index="2">
+            <img src="src/images/gallery/2-eiskoenigin.jpg" alt="Eiskönigin Face Art" loading="lazy">
+            <div class="img-acc-panel__overlay"></div>
+            <span class="img-acc-panel__label">Eiskönigin</span>
+          </div>
+          <div class="img-acc-panel" data-index="3">
+            <img src="src/images/gallery/5-pikachu.jpg" alt="Pikachu Face Art" loading="lazy">
+            <div class="img-acc-panel__overlay"></div>
+            <span class="img-acc-panel__label">Pikachu</span>
           </div>
         </div>
       </div>
@@ -391,14 +376,10 @@
   <script src="src/js/main.js"></script>
   <script>
   (function() {
-    const panels = document.querySelectorAll('.accordion-panel');
+    const panels = document.querySelectorAll('.img-acc-panel');
     if (panels.length) {
-      panels.forEach((panel, i) => {
+      panels.forEach((panel) => {
         panel.addEventListener('mouseenter', () => {
-          panels.forEach(p => p.classList.remove('active'));
-          panel.classList.add('active');
-        });
-        panel.addEventListener('click', () => {
           panels.forEach(p => p.classList.remove('active'));
           panel.classList.add('active');
         });
