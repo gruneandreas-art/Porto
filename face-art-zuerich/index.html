@@ -101,52 +101,52 @@
     </section>
 
 
-        <!-- ========== EXPANDABLE GALLERY ========== -->
-    <section class="section section--expand-gallery" id="galerie">
-      <div class="expand-gallery">
-        <div class="expand-gallery__header">
+            <!-- ========== LANDING ACCORDION ========== -->
+    <section class="section section--landing-accordion" id="galerie">
+      <div class="landing-accordion">
+        <!-- Left Side: Text + CTA -->
+        <div class="landing-accordion__left">
           <span class="section__label">Galerie</span>
-          <h2 class="section__title">Meine Face Art Motive</h2>
-          <p class="section__subtitle">Klicke auf ein Motiv, um es zu entdecken.</p>
+          <h2 class="landing-accordion__title">Meine Face Art Motive</h2>
+          <p class="landing-accordion__desc">Professionelles Kinderschminken & Face Art — von zarten Blumen über mutige Flugzeuge bis zur Eiskönigin. Jedes Motiv ein kleines Kunstwerk.</p>
+          <a href="kontakt.html" class="landing-accordion__cta">
+            <span>Contact Us</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
-        <div class="expand-gallery__cards" id="expandCards">
-          <div class="expand-card" data-index="0" style="background-image: url('src/images/gallery/1-blumen.jpg')">
-            <div class="expand-card__shadow"></div>
-            <div class="expand-card__label">
-              <div class="expand-card__icon">🌸</div>
-              <div class="expand-card__info">
-                <div class="expand-card__title">Blumen</div>
-                <div class="expand-card__desc">Zarte Blumenmotive</div>
+        <!-- Right Side: Image Accordion -->
+        <div class="landing-accordion__right">
+          <div class="landing-accordion__panels" id="accordionPanels">
+            <div class="accordion-panel active" data-index="0" style="background-image:url('src/images/gallery/1-blumen.jpg')">
+              <div class="accordion-panel__overlay"></div>
+              <div class="accordion-panel__content">
+                <span class="accordion-panel__tag">🌸</span>
+                <h3>Blumen</h3>
+                <p>Zarte Blumenmotive</p>
               </div>
             </div>
-          </div>
-          <div class="expand-card" data-index="1" style="background-image: url('src/images/gallery/4-flugi.jpg')">
-            <div class="expand-card__shadow"></div>
-            <div class="expand-card__label">
-              <div class="expand-card__icon">✈️</div>
-              <div class="expand-card__info">
-                <div class="expand-card__title">Flugzeug</div>
-                <div class="expand-card__desc">Abenteuerliche Flugmotive</div>
+            <div class="accordion-panel" data-index="1" style="background-image:url('src/images/gallery/4-flugi.jpg')">
+              <div class="accordion-panel__overlay"></div>
+              <div class="accordion-panel__content">
+                <span class="accordion-panel__tag">✈️</span>
+                <h3>Flugzeug</h3>
+                <p>Abenteuer für kleine Piloten</p>
               </div>
             </div>
-          </div>
-          <div class="expand-card" data-index="2" style="background-image: url('src/images/gallery/2-eiskoenigin.jpg')">
-            <div class="expand-card__shadow"></div>
-            <div class="expand-card__label">
-              <div class="expand-card__icon">❄️</div>
-              <div class="expand-card__info">
-                <div class="expand-card__title">Eiskönigin</div>
-                <div class="expand-card__desc">Magische Winterwelten</div>
+            <div class="accordion-panel" data-index="2" style="background-image:url('src/images/gallery/2-eiskoenigin.jpg')">
+              <div class="accordion-panel__overlay"></div>
+              <div class="accordion-panel__content">
+                <span class="accordion-panel__tag">❄️</span>
+                <h3>Eiskönigin</h3>
+                <p>Magische Winterwelten</p>
               </div>
             </div>
-          </div>
-          <div class="expand-card" data-index="3" style="background-image: url('src/images/gallery/5-pikachu.jpg')">
-            <div class="expand-card__shadow"></div>
-            <div class="expand-card__label">
-              <div class="expand-card__icon">⚡</div>
-              <div class="expand-card__info">
-                <div class="expand-card__title">Pikachu</div>
-                <div class="expand-card__desc">Lieblings-Helden</div>
+            <div class="accordion-panel" data-index="3" style="background-image:url('src/images/gallery/5-pikachu.jpg')">
+              <div class="accordion-panel__overlay"></div>
+              <div class="accordion-panel__content">
+                <span class="accordion-panel__tag">⚡</span>
+                <h3>Pikachu</h3>
+                <p>Lieblings-Helden zum Anziehen</p>
               </div>
             </div>
           </div>
@@ -391,22 +391,16 @@
   <script src="src/js/main.js"></script>
   <script>
   (function() {
-    const cards = document.querySelectorAll('.expand-card');
-    if (cards.length) {
-      cards[0].classList.add('active');
-      cards.forEach((card, i) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateX(-60px)';
-        setTimeout(() => {
-          card.style.transition = 'flex-grow 0.7s cubic-bezier(0.25,0.1,0.25,1), box-shadow 0.7s ease, background-size 0.7s ease, border-color 0.3s ease, opacity 0.5s ease, transform 0.5s ease';
-          card.style.opacity = '1';
-          card.style.transform = 'translateX(0)';
-        }, 180 * i);
-        card.addEventListener('click', () => {
-          cards.forEach(c => {
-            if (c === card) c.classList.add('active');
-            else c.classList.remove('active');
-          });
+    const panels = document.querySelectorAll('.accordion-panel');
+    if (panels.length) {
+      panels.forEach((panel, i) => {
+        panel.addEventListener('mouseenter', () => {
+          panels.forEach(p => p.classList.remove('active'));
+          panel.classList.add('active');
+        });
+        panel.addEventListener('click', () => {
+          panels.forEach(p => p.classList.remove('active'));
+          panel.classList.add('active');
         });
       });
     }
