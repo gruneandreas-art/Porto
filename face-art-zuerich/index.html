@@ -101,79 +101,54 @@
     </section>
 
 
-    <!-- ========== GALLERY GRID ========== -->
-    <section class="section section--gallery" id="galerie">
-      <div class="container">
-        <header class="section__header section__header--center">
+        <!-- ========== EXPANDABLE GALLERY ========== -->
+    <section class="section section--expand-gallery" id="galerie">
+      <div class="expand-gallery">
+        <div class="expand-gallery__header">
           <span class="section__label">Galerie</span>
-          <h2 class="section__title">Meine Face Art Motive </h2>
-          <p class="section__subtitle">Ein Auszug meiner Arbeit — von Kinderschminken über Body Art bis zu Hochzeits-Motiven.</p>
-        </header>
-        <div class="gallery-mosaic">
-          <div class="gallery-mosaic__item ">
-            <img src="src/images/gallery/1-blumen.jpg" alt="Blumen Face Art" loading="lazy">
-            <div class="gallery-mosaic__overlay"><span>Blumen</span></div>
+          <h2 class="section__title">Meine Face Art Motive</h2>
+          <p class="section__subtitle">Klicke auf ein Motiv, um es zu entdecken.</p>
+        </div>
+        <div class="expand-gallery__cards" id="expandCards">
+          <div class="expand-card" data-index="0" style="background-image: url('src/images/gallery/1-blumen.jpg')">
+            <div class="expand-card__shadow"></div>
+            <div class="expand-card__label">
+              <div class="expand-card__icon">🌸</div>
+              <div class="expand-card__info">
+                <div class="expand-card__title">Blumen</div>
+                <div class="expand-card__desc">Zarte Blumenmotive</div>
+              </div>
+            </div>
           </div>
-          <div class="gallery-mosaic__item">
-            <img src="src/images/gallery/2-eiskoenigin.jpg" alt="Eiskönigin Face Art" loading="lazy">
-            <div class="gallery-mosaic__overlay"><span>Eiskönigin</span></div>
+          <div class="expand-card" data-index="1" style="background-image: url('src/images/gallery/4-flugi.jpg')">
+            <div class="expand-card__shadow"></div>
+            <div class="expand-card__label">
+              <div class="expand-card__icon">✈️</div>
+              <div class="expand-card__info">
+                <div class="expand-card__title">Flugzeug</div>
+                <div class="expand-card__desc">Abenteuerliche Flugmotive</div>
+              </div>
+            </div>
           </div>
-          <div class="gallery-mosaic__item">
-            <img src="src/images/gallery/3-butterfly.jpg" alt="Schmetterling Face Art" loading="lazy">
-            <div class="gallery-mosaic__overlay"><span>Schmetterling</span></div>
+          <div class="expand-card" data-index="2" style="background-image: url('src/images/gallery/2-eiskoenigin.jpg')">
+            <div class="expand-card__shadow"></div>
+            <div class="expand-card__label">
+              <div class="expand-card__icon">❄️</div>
+              <div class="expand-card__info">
+                <div class="expand-card__title">Eiskönigin</div>
+                <div class="expand-card__desc">Magische Winterwelten</div>
+              </div>
+            </div>
           </div>
-          <div class="gallery-mosaic__item ">
-            <img src="src/images/gallery/7-einhorn.jpg" alt="Einhorn Face Art" loading="lazy">
-            <div class="gallery-mosaic__overlay"><span>Einhorn</span></div>
-          </div>
-          <div class="gallery-mosaic__item ">
-            <img src="src/images/gallery/8-krone.jpg" alt="Krone Face Art" loading="lazy">
-            <div class="gallery-mosaic__overlay"><span>Krone</span></div>
-          </div>
-          <div class="gallery-mosaic__item">
-            <img src="src/images/gallery/4-flugi.jpg" alt="Flugzeug Face Art" loading="lazy">
-            <div class="gallery-mosaic__overlay"><span>Flugzeug</span></div>
-          </div>
-          <div class="gallery-mosaic__item">
-            <img src="src/images/gallery/5-pikachu.jpg" alt="Pikachu Face Art" loading="lazy">
-            <div class="gallery-mosaic__overlay"><span>Pikachu</span></div>
-          </div>
-          <div class="gallery-mosaic__item ">
-            <img src="src/images/gallery/6-adult-magnolie.jpg" alt="Magnolie Body Art" loading="lazy">
-            <div class="gallery-mosaic__overlay"><span>Magnolie</span></div>
-          </div>
-          <div class="gallery-mosaic__item">
-            <img src="src/images/gallery/9-butterfly2.jpg" alt="Schmetterling Face Art" loading="lazy">
-            <div class="gallery-mosaic__overlay"><span>Schmetterling</span></div>
-          </div>
-          <div class="gallery-mosaic__item ">
-            <img src="src/images/gallery/10-adult-blue.jpg" alt="Blue Body Art" loading="lazy">
-            <div class="gallery-mosaic__overlay"><span>Body Art</span></div>
-          </div>
-          <div class="gallery-mosaic__item">
-            <img src="src/images/gallery/Kinder/IMG_2914_edited.jpg" alt="Kinderschminken Einhorn" loading="lazy">
-            <div class="gallery-mosaic__overlay"><span>Kinderschminken</span></div>
-          </div>
-          <div class="gallery-mosaic__item">
-            <img src="src/images/gallery/Hochzeit/IMG_6451_edited.jpg" alt="Hochzeit Blumenornament" loading="lazy">
-            <div class="gallery-mosaic__overlay"><span>Hochzeit</span></div>
-          </div>
-
-          <div class="gallery-mosaic__item">
-            <img src="src/images/gallery/Events/Chlausmaert/stand.jpeg" alt="Stand am Chlausmärt" loading="lazy">
-            <div class="gallery-mosaic__overlay"><span>Chlausmärt</span></div>
-          </div>
-          <div class="gallery-mosaic__item">
-            <img src="src/images/gallery/Events/Illuster/collage.jpg" alt="Illuster Collage" loading="lazy">
-            <div class="gallery-mosaic__overlay"><span>Illuster</span></div>
-          </div>
-          <div class="gallery-mosaic__item">
-            <img src="src/images/gallery/Events/flug%20and%20zug/118.jpg" alt="Flug & Zug" loading="lazy">
-            <div class="gallery-mosaic__overlay"><span>Flug & Zug</span></div>
-          </div>
-          <div class="gallery-mosaic__item">
-            <img src="src/images/gallery/Kinder/IMG_2817_Kopie_edited_edited.jpg" alt="Kinderschminken" loading="lazy">
-            <div class="gallery-mosaic__overlay"><span>Kinder</span></div>
+          <div class="expand-card" data-index="3" style="background-image: url('src/images/gallery/5-pikachu.jpg')">
+            <div class="expand-card__shadow"></div>
+            <div class="expand-card__label">
+              <div class="expand-card__icon">⚡</div>
+              <div class="expand-card__info">
+                <div class="expand-card__title">Pikachu</div>
+                <div class="expand-card__desc">Lieblings-Helden</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
