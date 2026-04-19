@@ -2209,20 +2209,31 @@ span.t-card__avatar {
 }
 
 /* ===== Gallery Mosaic ===== */
-.section--gallery { background: var(--cream); }
+.section--gallery { background: var(--bg); padding: 0; }
+.section--gallery .container { max-width: 100%; padding: 0; }
+.section--gallery .section__header { text-align: center; padding: 48px 24px 32px; max-width: 800px; margin: 0 auto; }
 
 .gallery-mosaic {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 200px;
-  gap: 12px;
+  gap: 0;
 }
 
 .gallery-mosaic__item {
   position: relative;
-  border-radius: var(--radius);
   overflow: hidden;
+  aspect-ratio: 1 / 1;
   cursor: pointer;
+}
+
+.gallery-mosaic__item--tall {
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
+.gallery-mosaic__item--wide {
+  grid-column: span 2;
+  aspect-ratio: auto;
 }
 
 .gallery-mosaic__item img {
@@ -2230,20 +2241,21 @@ span.t-card__avatar {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .gallery-mosaic__item:hover img {
-  transform: scale(1.08);
+  transform: scale(1.06);
+  filter: brightness(0.85);
 }
 
 .gallery-mosaic__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(20,14,26,0.7) 0%, transparent 60%);
+  background: rgba(20,14,26,0.25);
   display: flex;
-  align-items: flex-end;
-  padding: 16px;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -2255,26 +2267,16 @@ span.t-card__avatar {
 .gallery-mosaic__overlay span {
   color: #fff;
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-}
-
-/* Tall items span 2 rows */
-.gallery-mosaic__item--tall {
-  grid-row: span 2;
-}
-
-/* Wide items span 2 columns */
-.gallery-mosaic__item--wide {
-  grid-column: span 2;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
 @media (max-width: 768px) {
   .gallery-mosaic {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 160px;
+    grid-template-columns: repeat(3, 1fr);
   }
   .gallery-mosaic__item--wide {
     grid-column: span 2;
@@ -2283,11 +2285,12 @@ span.t-card__avatar {
 
 @media (max-width: 480px) {
   .gallery-mosaic {
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 140px;
-    gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
   }
   .gallery-mosaic__item--wide {
     grid-column: span 1;
+  }
+  .gallery-mosaic__item--tall {
+    grid-row: span 1;
   }
 }
