@@ -285,4 +285,21 @@
     });
   }
 
+
+
+  /* ===== Newsletter Form ===== */
+  const newsletterForm = document.getElementById('newsletterForm');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('newsletterEmail');
+      const confirm = document.getElementById('newsletterConfirm');
+      if (email && email.value && email.checkValidity()) {
+        confirm.classList.add('show');
+        email.value = '';
+        setTimeout(() => confirm.classList.remove('show'), 5000);
+      }
+    });
+  }
+
 })();
